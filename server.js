@@ -2,10 +2,13 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
-// console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-// create a GET route
-app.get('/express_backend', (req, res) => {
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+app.get('/api/article', (req, res) => {
+  res.json({
+    title: 'Lorem ispum',
+    image:
+      'https://c.files.bbci.co.uk/12A9B/production/_111434467_gettyimages-1143489763.jpg',
+    article: 'ahhahahhahhahahha',
+  });
 });
